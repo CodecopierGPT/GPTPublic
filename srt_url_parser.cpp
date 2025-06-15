@@ -1,6 +1,10 @@
 #include <sstream>
 #include <algorithm>
 #include <cctype>
+#include <vector>
+#include <string>
+#include <cstdio>
+#include "srt_url_parser.h"
 
 // ===========================================
 // 内部辅助类：SRT URL解析器
