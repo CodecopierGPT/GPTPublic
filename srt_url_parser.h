@@ -29,5 +29,6 @@ struct srt_options {
 
 // 主函数声明
 int parse_srt_url(const std::string& srt_url, srt_options& opt);
+void print_srt_options(const srt_options& opt);
 
 #endif  // SRT_URL_PARSER_H_
