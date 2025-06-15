@@ -1,6 +1,11 @@
 // ===========================================
 // 测试和使用示例
 // ===========================================
+#include <cstdio>
+#include <cstddef>
+#include <string>
+#include <vector>
+#include "srt_url_parser.h"
 void test_parse_srt_url() {
   printf("=== SRT URL解析测试 ===\n\n");
   
