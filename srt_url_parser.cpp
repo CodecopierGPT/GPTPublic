@@ -262,3 +262,19 @@ int parse_srt_url(const std::string& srt_url, srt_options& opt) {
   SrtUrlParserHelper parser;
   return parser.parse(srt_url, opt);
 }
+
+// 辅助函数：打印选项结构体
+void print_srt_options(const srt_options& opt) {
+  printf("  mode: \"%s\"\n", opt.mode.c_str());
+  printf("  host: \"%s\"\n", opt.host.c_str());
+  printf("  port: %d\n", opt.port);
+  printf("  streamid: \"%s\"\n", opt.streamid.c_str());
+  printf("  passphrase: \"%s\"\n", opt.passphrase.c_str());
+  printf("  pbkeylen: %d\n", opt.pbkeylen);
+  printf("  latency: %d\n", opt.latency);
+  printf("  maxbw: %d\n", opt.maxbw);
+  printf("  rcvbuf: %d\n", opt.rcvbuf);
+  printf("  sndbuf: %d\n", opt.sndbuf);
+  printf("  ipttl: %d\n", opt.ipttl);
+  printf("  conntimeo: %d\n", opt.conntimeo);
+}
