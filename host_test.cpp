@@ -1,3 +1,12 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+
+#include "host_validator.h"
+
+using namespace std;
+
 // 测试函数
 void runTests() {
     cout << "=== 主机地址验证测试 ===" << endl;
