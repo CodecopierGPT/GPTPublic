@@ -84,6 +84,7 @@ int main() {
         getline(cin, input);
         
         if (input == "quit") {
+            cout << "退出" << endl;
             break;
         }
         

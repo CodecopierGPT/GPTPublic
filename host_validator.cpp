@@ -1,3 +1,12 @@
+#include <string>
+#include <vector>
+#include <regex>
+#include <sstream>
+#include <cctype>
+#include "host_validator.h"
+
+using namespace std;
+
 class HostValidator {
 private:
     // 危险字符列表，用于防止注入攻击
