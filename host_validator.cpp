@@ -3,6 +3,7 @@
 #include <regex>
 #include <sstream>
 #include <cctype>
+#include <cstdlib>
 #include "host_validator.h"
 
 using namespace std;
@@ -125,12 +126,9 @@ public:
             if (oct.length() > 3) return false;
             
             // 转换为数字并检查范围
-            try {
-                int num = stoi(oct);
-                if (num < 0 || num > 255) {
-                    return false;
-                }
-            } catch (...) {
+            char* endptr = nullptr;
+            long num = strtol(oct.c_str(), &endptr, 10);
+            if (*endptr != '\0' || num < 0 || num > 255) {
                 return false;
             }
         }
