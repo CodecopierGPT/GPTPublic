@@ -9,15 +9,10 @@ static const std::regex ip6_full(
     std::regex_constants::icase);
 
 // IPv6 compressed form regex: exactly one "::"
+// IPv6 compressed form regex covering valid "::" usage
 static const std::regex ip6_comp(
-    R"(^(?!.*::.*::)                       # only one :: allowed
-        (?:[0-9A-Fa-f]{0,4}               # prefix groups (optional)
-          (?::[0-9A-Fa-f]{0,4}){0,6})?
-        ::
-        (?:[0-9A-Fa-f]{0,4}               # suffix groups (optional)
-          (?::[0-9A-Fa-f]{0,4}){0,6})?
-        $)",
-    std::regex_constants::icase | std::regex_constants::ECMAScript);
+    R"(^((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4}){0,5})?)::((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4}){0,5})?)$)",
+    std::regex_constants::icase);
 
 struct TestCase {
     std::string input;
